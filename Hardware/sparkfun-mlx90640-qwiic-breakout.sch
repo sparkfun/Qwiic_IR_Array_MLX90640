@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -28428,12 +28428,16 @@ We carry &lt;a href=”https://www.sparkfun.com/products/14204”&gt;200mm&lt;/a
 <sheet>
 <plain>
 <text x="76.708" y="101.346" size="1.778" layer="97">Power</text>
-<text x="165.354" y="11.43" size="2.54" layer="94">Jim Lindblom</text>
-<text x="106.68" y="93.98" size="1.778" layer="97">7-bit unshifted I2C Address: 0x33</text>
-<text x="236.22" y="7.62" size="2.54" layer="94" font="vector">v01</text>
+<text x="165.354" y="11.43" size="2.54" layer="94" font="vector">Jim Lindblom</text>
+<text x="106.68" y="93.98" size="1.778" layer="97" font="vector">7-bit unshifted I2C Address: 0x33</text>
+<text x="236.22" y="7.62" size="2.54" layer="94" font="vector">v10</text>
 <text x="168.656" y="7.366" size="2.54" layer="94" font="vector">Andy England</text>
 <text x="114.3" y="132.08" size="2.54" layer="95" font="vector">MLX90640</text>
 <text x="50.8" y="63.5" size="2.54" layer="95" font="vector">Qwiic/I2C Conections</text>
+<wire x1="0" y1="81.28" x2="248.92" y2="81.28" width="0.1524" layer="97" style="longdash"/>
+<text x="114.3" y="129.54" size="1.778" layer="97" font="vector">VIN: 3-3.6V</text>
+<text x="10.16" y="2.54" size="1.778" layer="97" font="vector">This is the 110 Degree FOV version of the board, there is also a board, SEN-14844, with a 55 Degree FOV</text>
+<text x="175.26" y="124.46" size="1.778" layer="97" font="vector">Cut trace on jumper JP1 to remove I2C pullups</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -28571,56 +28575,56 @@ We carry &lt;a href=”https://www.sparkfun.com/products/14204”&gt;200mm&lt;/a
 <segment>
 <pinref part="J2" gate="G$1" pin="4"/>
 <wire x1="43.18" y1="50.8" x2="38.1" y2="50.8" width="0.1524" layer="91"/>
-<label x="38.1" y="50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="38.1" y="50.8" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="SCL"/>
 <wire x1="76.2" y1="50.8" x2="71.12" y2="50.8" width="0.1524" layer="91"/>
-<label x="71.12" y="50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="71.12" y="50.8" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="4"/>
 <wire x1="43.18" y1="22.86" x2="38.1" y2="22.86" width="0.1524" layer="91"/>
-<label x="38.1" y="22.86" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="38.1" y="22.86" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="SCL"/>
 <wire x1="134.62" y1="106.68" x2="137.16" y2="106.68" width="0.1524" layer="91"/>
-<label x="137.16" y="106.68" size="1.27" layer="95" xref="yes"/>
+<label x="137.16" y="106.68" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="106.68" x2="180.34" y2="101.6" width="0.1524" layer="91"/>
 <wire x1="180.34" y1="101.6" x2="162.56" y2="101.6" width="0.1524" layer="91"/>
-<label x="162.56" y="101.6" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="162.56" y="101.6" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
 <pinref part="J2" gate="G$1" pin="3"/>
 <wire x1="43.18" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
-<label x="38.1" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="38.1" y="48.26" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="J3" gate="G$1" pin="SDA"/>
 <wire x1="76.2" y1="48.26" x2="71.12" y2="48.26" width="0.1524" layer="91"/>
-<label x="71.12" y="48.26" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="71.12" y="48.26" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="J4" gate="G$1" pin="3"/>
 <wire x1="43.18" y1="20.32" x2="38.1" y2="20.32" width="0.1524" layer="91"/>
-<label x="38.1" y="20.32" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="38.1" y="20.32" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="SDA"/>
 <wire x1="134.62" y1="111.76" x2="137.16" y2="111.76" width="0.1524" layer="91"/>
-<label x="137.16" y="111.76" size="1.27" layer="95" xref="yes"/>
+<label x="137.16" y="111.76" size="1.27" layer="95" font="vector" xref="yes"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="165.1" y1="106.68" x2="165.1" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="104.14" x2="165.1" y2="104.14" width="0.1524" layer="91"/>
-<label x="162.56" y="104.14" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="162.56" y="104.14" size="1.27" layer="95" font="vector" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$1" class="0">

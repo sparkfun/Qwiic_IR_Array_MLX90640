@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.0.1">
+<eagle version="9.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -40,7 +40,7 @@
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
-<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
@@ -150,9 +150,14 @@
 <wire x1="25.4" y1="0" x2="25.4" y2="25.4" width="0.1524" layer="20"/>
 <wire x1="25.4" y1="25.4" x2="0" y2="25.4" width="0.1524" layer="20"/>
 <wire x1="0" y1="25.4" x2="0" y2="0" width="0.1524" layer="20"/>
-<text x="25.2095" y="6.35" size="1.27" layer="16" font="vector" ratio="15" rot="SMR270" align="bottom-center">v01</text>
+<text x="25.2095" y="6.35" size="1.27" layer="16" font="vector" ratio="15" rot="SMR270" align="bottom-center">v10</text>
 <text x="24.13" y="-7.62" size="1.778" layer="51" font="vector" align="bottom-center">Jim Lindblom</text>
 <text x="22.86" y="-10.16" size="1.778" layer="51" font="vector" align="bottom-center">Andy England</text>
+<dimension x1="2.54" y1="22.86" x2="2.54" y2="2.54" x3="-1.23" y3="12.7" textsize="1.778" layer="47" unit="inch"/>
+<dimension x1="0" y1="0" x2="0" y2="25.4" x3="-4.92" y3="12.7" textsize="1.778" layer="47" unit="inch"/>
+<dimension x1="0" y1="25.4" x2="25.4" y2="25.4" x3="12.7" y3="30.75" textsize="1.778" layer="47" unit="inch"/>
+<dimension x1="2.54" y1="22.86" x2="22.86" y2="22.86" x3="12.7" y3="27.06" textsize="1.778" layer="47" unit="inch"/>
+<text x="-13.53" y="25.83" size="1.778" layer="47" font="vector">Units in In.</text>
 </plain>
 <libraries>
 <library name="SparkFun-Capacitors">
@@ -5423,6 +5428,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <param name="checkRestrict" value="1"/>
 <param name="checkStop" value="0"/>
 <param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -5646,19 +5654,21 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="18.8355" y1="14.2" x2="18.6055" y2="13.97" width="0.1524" layer="1"/>
 <via x="18.6055" y="13.97" extent="1-16" drill="0.3048"/>
 <wire x1="11.28" y1="11.2" x2="12.7" y2="9.78" width="0.1524" layer="16"/>
-<wire x1="18.6055" y1="13.97" x2="16.51" y2="11.8745" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="11.8745" x2="16.51" y2="10.16" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="10.16" x2="15.24" y2="8.89" width="0.1524" layer="16"/>
+<wire x1="16.51" y1="11.8745" x2="18.6055" y2="13.97" width="0.1524" layer="16"/>
 <wire x1="13.59" y1="8.89" x2="12.7" y2="9.78" width="0.1524" layer="16"/>
 <wire x1="15.24" y1="8.89" x2="13.59" y2="8.89" width="0.1524" layer="16"/>
 <wire x1="16.51" y1="1.27" x2="16.51" y2="2.54" width="0.1524" layer="16"/>
 <wire x1="16.51" y1="2.54" x2="17.78" y2="3.81" width="0.1524" layer="16"/>
 <via x="19.05" y="5.08" extent="1-16" drill="0.3048"/>
 <wire x1="17.78" y1="3.81" x2="19.05" y2="5.08" width="0.1524" layer="16"/>
-<wire x1="19.05" y1="5.08" x2="19.05" y2="5.5" width="0.1524" layer="1"/>
-<wire x1="19.05" y1="5.5" x2="20.32" y2="6.77" width="0.1524" layer="1"/>
 <wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="16"/>
 <wire x1="15.24" y1="6.35" x2="17.78" y2="3.81" width="0.1524" layer="16"/>
+<wire x1="15.24" y1="8.89" x2="16.002" y2="8.89" width="0.1524" layer="16"/>
+<wire x1="16.002" y1="8.89" x2="16.51" y2="9.398" width="0.1524" layer="16"/>
+<wire x1="16.51" y1="9.398" x2="16.51" y2="11.8745" width="0.1524" layer="16"/>
+<wire x1="19.05" y1="5.08" x2="19.812" y2="5.08" width="0.1524" layer="1"/>
+<wire x1="19.812" y1="5.08" x2="20.32" y2="5.588" width="0.1524" layer="1"/>
+<wire x1="20.32" y1="5.588" x2="20.32" y2="6.77" width="0.1524" layer="1"/>
 </signal>
 <signal name="SDA">
 <contactref element="J2" pad="3"/>
@@ -5675,11 +5685,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <via x="15.8115" y="12.8905" extent="1-16" drill="0.3048"/>
 <wire x1="15.121" y1="12.2" x2="15.8115" y2="12.8905" width="0.1524" layer="16"/>
 <wire x1="14.764753125" y1="10.635246875" x2="14.764753125" y2="9.785246875" width="0.1524" layer="1"/>
-<wire x1="14.764753125" y1="9.785246875" x2="16.085" y2="8.465" width="0.1524" layer="1"/>
-<wire x1="16.085" y1="8.465" x2="17.78" y2="6.77" width="0.1524" layer="1"/>
 <wire x1="14.764753125" y1="10.635246875" x2="14.764753125" y2="12.2" width="0.1524" layer="16"/>
-<wire x1="13.97" y1="1.27" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
-<wire x1="13.97" y1="6.35" x2="16.085" y2="8.465" width="0.1524" layer="1"/>
+<wire x1="13.97" y1="1.27" x2="13.97" y2="6.15" width="0.1524" layer="1"/>
+<wire x1="13.97" y1="6.15" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="17.78" y1="6.77" x2="15.99" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="15.99" y1="6.77" x2="15.37" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="14.764753125" y1="7.384753125" x2="14.76" y2="7.38" width="0.1524" layer="1"/>
+<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="10.635246875" width="0.1524" layer="1"/>
+<wire x1="13.97" y1="6.15" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="13.97" y1="6.35" x2="13.97" y2="6.15" width="0.1524" layer="1"/>
+<wire x1="15.99" y1="6.77" x2="14.76" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="14.76" y1="6.77" x2="14.39" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="14.39" y1="6.77" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
+<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="6.774753125" width="0.1524" layer="1"/>
+<wire x1="14.764753125" y1="6.774753125" x2="14.76" y2="6.77" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R1" pad="2"/>
@@ -5704,11 +5723,18 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="1.69" y1="6.9485" x2="1.69" y2="8.255" width="0.254" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 <errors>
-<approved hash="19,16,c7915655ac863f9e"/>
 <approved hash="19,16,a190528aaa595b9f"/>
-<approved hash="19,16,9bab40b1b86261a4"/>
 <approved hash="19,16,a9965c52a6815199"/>
+<approved hash="19,16,9bab40b1b86261a4"/>
+<approved hash="19,16,c7915655ac863f9e"/>
 </errors>
 </board>
 </drawing>
