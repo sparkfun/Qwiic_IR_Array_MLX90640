@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1.23" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -18,9 +18,9 @@
 <layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -5055,6 +5055,8 @@ package with digital interface.&lt;/p&gt;
 <vertex x="-5.1890125" y="-2.701228125"/>
 <vertex x="-4.302003125" y="-2.23948125" curve="-20"/>
 </polygon>
+<text x="-2.54" y="-6.35" size="1.27" layer="25" font="vector">&gt;Name</text>
+<text x="-3.683" y="5.08" size="1.27" layer="27" font="vector">&gt;Value</text>
 </package>
 </packages>
 </library>
@@ -5358,29 +5360,39 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <class number="0" name="default" width="0" drill="0">
 </class>
 </classes>
-<designrules name="SparkFun-2-layer-PCBWay-LIMIT">
-<description language="en">&lt;b&gt;SparkFun 2 Layer Design Rule Checks - Limits for PCBWay&lt;/b&gt;
+<designrules name="SparkFun-2-layer-TIGHT">
+<description language="en">&lt;b&gt;SparkFun 2 Layer Design Rule Checks - STANDARD/TIGHT/FAB-LIMIT&lt;/b&gt;
 &lt;p&gt;
- If you're ordering from PCBWay, these are the 'free' minimums.</description>
+These rules have been curated by SparkFuns DFM commitee. After doing much research, communicating with our multiple fab houses, and getting quotes of various designs, we have compiled three DRU files. 
+&lt;p&gt;
+&lt;b&gt;STANDARD:&lt;/b&gt; This is more of a &quot;best case scenario&quot; set of limitations. If your design has the space, and/or you have the time to work within these parameters, please do. Larger trace width and clearance makes for easier visual inspection of the PCB while troubleshooting (useful in production and to the end user). It also allows for better ability to hack a trace (if you are crazy enough to scrape away the mask and solder to a trace). Another thing to keep in mind is that more metal is just more robust. 
+&lt;p&gt;
+&lt;b&gt;TIGHT:&lt;/b&gt; This is where cost comes into play. We have found that most fab houses begin to add extra charges when you go smaller than these specs. In some cases, going to less than 15 mil trace can increase the cost by 10%. (This is why we have set the min drill on this DRU to 15 mil) Same story for traces thinner than 7 mil. To avoid those extra charges, then stay within the rules of this DRU.
+&lt;p&gt;
+&lt;b&gt;FAB-LIMIT:&lt;/b&gt; These set of rules are at the very limit of most fab houses capabilities. You will pay more for these specs, and it should be used on designs that have a darned good reason to need 4 mil vias and 4 mil traces.
+&lt;p&gt;
+**NOTE Clearance, Distance, Sizes, and Restring are all set to different limits in each of these three DRU files. Please compare the files within the CAM job editor window of eagle to see all the numbers.
+&lt;p&gt;
+***NOTE, Please set your Net Classes to default (0mil for all settings), so that it won't effect the DRC when you run it with these settings.</description>
 <param name="layerSetup" value="(1*16)"/>
 <param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
 <param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
-<param name="mdSmdPad" value="6mil"/>
-<param name="mdSmdVia" value="6mil"/>
-<param name="mdSmdSmd" value="6mil"/>
+<param name="mdWireWire" value="7mil"/>
+<param name="mdWirePad" value="7mil"/>
+<param name="mdWireVia" value="7mil"/>
+<param name="mdPadPad" value="7mil"/>
+<param name="mdPadVia" value="7mil"/>
+<param name="mdViaVia" value="7mil"/>
+<param name="mdSmdPad" value="7mil"/>
+<param name="mdSmdVia" value="7mil"/>
+<param name="mdSmdSmd" value="7mil"/>
 <param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="6mil"/>
-<param name="mdDrill" value="6mil"/>
+<param name="mdCopperDimension" value="7mil"/>
+<param name="mdDrill" value="7mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="6mil"/>
-<param name="msDrill" value="0.3mm"/>
+<param name="msWidth" value="7mil"/>
+<param name="msDrill" value="15mil"/>
 <param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
@@ -5400,9 +5412,9 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <param name="rlMaxViaOuter" value="20mil"/>
 <param name="rlMinViaInner" value="7mil"/>
 <param name="rlMaxViaInner" value="20mil"/>
-<param name="rlMinMicroViaOuter" value="7mil"/>
+<param name="rlMinMicroViaOuter" value="4mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
-<param name="rlMinMicroViaInner" value="7mil"/>
+<param name="rlMinMicroViaInner" value="4mil"/>
 <param name="rlMaxMicroViaInner" value="20mil"/>
 <param name="psTop" value="-1"/>
 <param name="psBottom" value="-1"/>
@@ -5608,7 +5620,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="19.05" y1="12.2" x2="20.32" y2="12.2" width="0.254" layer="1"/>
 <wire x1="12.2" y1="13.2" x2="13.2" y2="12.2" width="0.254" layer="1"/>
 <wire x1="19.05" y1="7.62" x2="19.05" y2="12.2" width="0.254" layer="16"/>
-<via x="19.05" y="12.2" extent="1-16" drill="0.3048"/>
+<via x="19.05" y="12.2" extent="1-16" drill="0.381"/>
 <wire x1="11.43" y1="1.27" x2="7.62" y2="5.08" width="0.254" layer="1"/>
 <wire x1="7.62" y1="5.08" x2="7.62" y2="8.255" width="0.254" layer="1"/>
 <wire x1="7.62" y1="8.255" x2="7.62" y2="13.2" width="0.254" layer="1"/>
@@ -5639,7 +5651,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <vertex x="25.4" y="25.4"/>
 <vertex x="25.4" y="0"/>
 </polygon>
-<via x="6.35" y="15.24" extent="1-16" drill="0.3048"/>
+<via x="6.35" y="15.24" extent="1-16" drill="0.381"/>
 </signal>
 <signal name="SCL">
 <contactref element="J2" pad="4"/>
@@ -5648,27 +5660,27 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="U1" pad="SCL"/>
 <contactref element="R2" pad="1"/>
 <wire x1="5.08" y1="11.2" x2="6.9455" y2="11.2" width="0.1524" layer="1"/>
-<via x="6.9455" y="11.2" extent="1-16" drill="0.3048"/>
-<wire x1="6.9455" y1="11.2" x2="11.28" y2="11.2" width="0.1524" layer="16"/>
-<wire x1="20.32" y1="14.2" x2="18.8355" y2="14.2" width="0.1524" layer="1"/>
-<wire x1="18.8355" y1="14.2" x2="18.6055" y2="13.97" width="0.1524" layer="1"/>
-<via x="18.6055" y="13.97" extent="1-16" drill="0.3048"/>
-<wire x1="11.28" y1="11.2" x2="12.7" y2="9.78" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="11.8745" x2="18.6055" y2="13.97" width="0.1524" layer="16"/>
-<wire x1="13.59" y1="8.89" x2="12.7" y2="9.78" width="0.1524" layer="16"/>
-<wire x1="15.24" y1="8.89" x2="13.59" y2="8.89" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="1.27" x2="16.51" y2="2.54" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="2.54" x2="17.78" y2="3.81" width="0.1524" layer="16"/>
-<via x="19.05" y="5.08" extent="1-16" drill="0.3048"/>
+<via x="6.9455" y="11.2" extent="1-16" drill="0.381"/>
+<wire x1="6.9455" y1="11.2" x2="11.28" y2="11.2" width="0.2032" layer="16"/>
+<wire x1="20.32" y1="14.2" x2="18.8355" y2="14.2" width="0.2032" layer="1"/>
+<wire x1="18.8355" y1="14.2" x2="18.6055" y2="13.97" width="0.2032" layer="1"/>
+<via x="18.6055" y="13.97" extent="1-16" drill="0.381"/>
+<wire x1="11.28" y1="11.2" x2="12.7" y2="9.78" width="0.2032" layer="16"/>
+<wire x1="16.51" y1="11.8745" x2="18.6055" y2="13.97" width="0.2032" layer="16"/>
+<wire x1="13.59" y1="8.89" x2="12.7" y2="9.78" width="0.2032" layer="16"/>
+<wire x1="15.24" y1="8.89" x2="13.59" y2="8.89" width="0.2032" layer="16"/>
+<wire x1="16.51" y1="1.27" x2="16.51" y2="2.54" width="0.2032" layer="16"/>
+<wire x1="16.51" y1="2.54" x2="17.78" y2="3.81" width="0.2032" layer="16"/>
+<via x="19.05" y="5.08" extent="1-16" drill="0.381"/>
 <wire x1="17.78" y1="3.81" x2="19.05" y2="5.08" width="0.1524" layer="16"/>
-<wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.1524" layer="16"/>
-<wire x1="15.24" y1="6.35" x2="17.78" y2="3.81" width="0.1524" layer="16"/>
-<wire x1="15.24" y1="8.89" x2="16.002" y2="8.89" width="0.1524" layer="16"/>
-<wire x1="16.002" y1="8.89" x2="16.51" y2="9.398" width="0.1524" layer="16"/>
-<wire x1="16.51" y1="9.398" x2="16.51" y2="11.8745" width="0.1524" layer="16"/>
-<wire x1="19.05" y1="5.08" x2="19.812" y2="5.08" width="0.1524" layer="1"/>
-<wire x1="19.812" y1="5.08" x2="20.32" y2="5.588" width="0.1524" layer="1"/>
-<wire x1="20.32" y1="5.588" x2="20.32" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="15.24" y1="8.89" x2="15.24" y2="6.35" width="0.2032" layer="16"/>
+<wire x1="15.24" y1="6.35" x2="17.78" y2="3.81" width="0.2032" layer="16"/>
+<wire x1="15.24" y1="8.89" x2="16.002" y2="8.89" width="0.2032" layer="16"/>
+<wire x1="16.002" y1="8.89" x2="16.51" y2="9.398" width="0.2032" layer="16"/>
+<wire x1="16.51" y1="9.398" x2="16.51" y2="11.8745" width="0.2032" layer="16"/>
+<wire x1="19.05" y1="5.08" x2="19.812" y2="5.08" width="0.2032" layer="1"/>
+<wire x1="19.812" y1="5.08" x2="20.32" y2="5.588" width="0.2032" layer="1"/>
+<wire x1="20.32" y1="5.588" x2="20.32" y2="6.77" width="0.2032" layer="1"/>
 </signal>
 <signal name="SDA">
 <contactref element="J2" pad="3"/>
@@ -5676,35 +5688,29 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="J4" pad="3"/>
 <contactref element="U1" pad="SDA"/>
 <contactref element="R1" pad="1"/>
-<wire x1="5.08" y1="12.2" x2="6.9295" y2="12.2" width="0.1524" layer="1"/>
-<via x="6.9295" y="12.2" extent="1-16" drill="0.3048"/>
-<wire x1="6.9295" y1="12.2" x2="14.764753125" y2="12.2" width="0.1524" layer="16"/>
-<wire x1="14.764753125" y1="12.2" x2="15.121" y2="12.2" width="0.1524" layer="16"/>
-<wire x1="20.32" y1="13.2" x2="16.121" y2="13.2" width="0.1524" layer="1"/>
-<wire x1="16.121" y1="13.2" x2="15.8115" y2="12.8905" width="0.1524" layer="1"/>
-<via x="15.8115" y="12.8905" extent="1-16" drill="0.3048"/>
-<wire x1="15.121" y1="12.2" x2="15.8115" y2="12.8905" width="0.1524" layer="16"/>
-<wire x1="14.764753125" y1="10.635246875" x2="14.764753125" y2="9.785246875" width="0.1524" layer="1"/>
-<wire x1="14.764753125" y1="10.635246875" x2="14.764753125" y2="12.2" width="0.1524" layer="16"/>
-<wire x1="13.97" y1="1.27" x2="13.97" y2="6.15" width="0.1524" layer="1"/>
-<wire x1="13.97" y1="6.15" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
-<wire x1="17.78" y1="6.77" x2="15.99" y2="6.77" width="0.1524" layer="1"/>
-<wire x1="15.99" y1="6.77" x2="15.37" y2="6.77" width="0.1524" layer="1"/>
-<wire x1="14.764753125" y1="7.384753125" x2="14.76" y2="7.38" width="0.1524" layer="1"/>
-<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="10.635246875" width="0.1524" layer="1"/>
-<wire x1="13.97" y1="6.15" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
-<wire x1="13.97" y1="6.35" x2="13.97" y2="6.15" width="0.1524" layer="1"/>
-<wire x1="15.99" y1="6.77" x2="14.76" y2="6.77" width="0.1524" layer="1"/>
-<wire x1="14.76" y1="6.77" x2="14.39" y2="6.77" width="0.1524" layer="1"/>
-<wire x1="14.39" y1="6.77" x2="13.97" y2="6.35" width="0.1524" layer="1"/>
-<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="6.774753125" width="0.1524" layer="1"/>
+<wire x1="5.08" y1="12.2" x2="6.9295" y2="12.2" width="0.2032" layer="1"/>
+<via x="6.9295" y="12.2" extent="1-16" drill="0.381"/>
+<wire x1="6.9295" y1="12.2" x2="14.764753125" y2="12.2" width="0.2032" layer="16"/>
+<wire x1="14.764753125" y1="12.2" x2="15.121" y2="12.2" width="0.2032" layer="16"/>
+<wire x1="20.32" y1="13.2" x2="16.121" y2="13.2" width="0.2032" layer="1"/>
+<wire x1="16.121" y1="13.2" x2="15.8115" y2="12.8905" width="0.2032" layer="1"/>
+<via x="15.8115" y="12.8905" extent="1-16" drill="0.381"/>
+<wire x1="15.121" y1="12.2" x2="15.8115" y2="12.8905" width="0.2032" layer="16"/>
+<wire x1="14.764753125" y1="10.635246875" x2="14.764753125" y2="12.2" width="0.2032" layer="16"/>
+<wire x1="17.78" y1="6.77" x2="15.99" y2="6.77" width="0.2032" layer="1"/>
+<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="10.635246875" width="0.2032" layer="1"/>
+<wire x1="15.99" y1="6.77" x2="14.76" y2="6.77" width="0.2032" layer="1"/>
+<wire x1="14.76" y1="6.77" x2="14.39" y2="6.77" width="0.2032" layer="1"/>
+<wire x1="14.39" y1="6.77" x2="13.97" y2="6.35" width="0.2032" layer="1"/>
+<wire x1="14.764753125" y1="7.384753125" x2="14.764753125" y2="6.774753125" width="0.2032" layer="1"/>
 <wire x1="14.764753125" y1="6.774753125" x2="14.76" y2="6.77" width="0.1524" layer="1"/>
+<wire x1="13.97" y1="6.35" x2="13.97" y2="1.27" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$1">
 <contactref element="R1" pad="2"/>
 <contactref element="JP1" pad="3"/>
 <wire x1="17.78" y1="8.47" x2="17.78" y2="9.652" width="0.254" layer="1"/>
-<via x="17.78" y="9.652" extent="1-16" drill="0.3048"/>
+<via x="17.78" y="9.652" extent="1-16" drill="0.381"/>
 <wire x1="17.78" y1="9.652" x2="18.034" y2="9.398" width="0.254" layer="16"/>
 <wire x1="18.034" y1="9.398" x2="18.034" y2="7.62" width="0.254" layer="16"/>
 </signal>
@@ -5712,7 +5718,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <contactref element="R2" pad="2"/>
 <contactref element="JP1" pad="1"/>
 <wire x1="20.32" y1="8.47" x2="20.32" y2="9.652" width="0.254" layer="1"/>
-<via x="20.32" y="9.652" extent="1-16" drill="0.3048"/>
+<via x="20.32" y="9.652" extent="1-16" drill="0.381"/>
 <wire x1="20.32" y1="9.652" x2="20.066" y2="9.398" width="0.254" layer="16"/>
 <wire x1="20.066" y1="9.398" x2="20.066" y2="7.62" width="0.254" layer="16"/>
 </signal>
@@ -5731,10 +5737,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
 </mfgpreviewcolors>
 <errors>
-<approved hash="19,16,a190528aaa595b9f"/>
-<approved hash="19,16,a9965c52a6815199"/>
-<approved hash="19,16,9bab40b1b86261a4"/>
-<approved hash="19,16,c7915655ac863f9e"/>
+<approved hash="19,16,8b009a2064d07494"/>
+<approved hash="19,16,764a4e0cb2c08be2"/>
+<approved hash="19,16,704ea80854fb8dd9"/>
+<approved hash="19,16,b10794276ad54e91"/>
 </errors>
 </board>
 </drawing>

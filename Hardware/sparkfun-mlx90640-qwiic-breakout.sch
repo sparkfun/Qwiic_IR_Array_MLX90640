@@ -28196,6 +28196,8 @@ package with digital interface.&lt;/p&gt;
 <vertex x="-5.1890125" y="-2.701228125"/>
 <vertex x="-4.302003125" y="-2.23948125" curve="-20"/>
 </polygon>
+<text x="-2.54" y="-6.35" size="1.27" layer="25" font="vector">&gt;Name</text>
+<text x="-3.683" y="5.08" size="1.27" layer="27" font="vector">&gt;Value</text>
 </package>
 </packages>
 <symbols>
@@ -28436,7 +28438,7 @@ We carry &lt;a href=”https://www.sparkfun.com/products/14204”&gt;200mm&lt;/a
 <text x="50.8" y="63.5" size="2.54" layer="95" font="vector">Qwiic/I2C Conections</text>
 <wire x1="0" y1="81.28" x2="248.92" y2="81.28" width="0.1524" layer="97" style="longdash"/>
 <text x="114.3" y="129.54" size="1.778" layer="97" font="vector">VIN: 3-3.6V</text>
-<text x="10.16" y="2.54" size="1.778" layer="97" font="vector">This is the 110 Degree FOV version of the board, there is also a board, SEN-14844, with a 55 Degree FOV</text>
+<text x="60.96" y="86.36" size="1.778" layer="97" font="vector">This is the 110 Degree FOV version of the board, there is also a board, SEN-14844, with a 55 Degree FOV</text>
 <text x="175.26" y="124.46" size="1.778" layer="97" font="vector">Cut trace on jumper JP1 to remove I2C pullups</text>
 </plain>
 <instances>
