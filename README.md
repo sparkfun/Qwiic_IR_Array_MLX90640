@@ -17,8 +17,7 @@ Repository Contents
 Documentation
 --------------
 * **[Library](https://github.com/sparkfun/SparkFun_MLX90640_Arduino_Example)** - Arduino library for the Qwiic IR Array (MLX90640-55x35 FOV).
-* **[Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-ir-array-mlx90640-hookup-guide
-)** - Basic hookup guide for the Qwiic IR Array (MLX90640-55x35 FOV).
+* **[Hookup Guide](https://learn.sparkfun.com/tutorials/qwiic-ir-array-mlx90640-hookup-guide)** - Basic hookup guide for the Qwiic IR Array.
 
 Product Versions
 ----------------
