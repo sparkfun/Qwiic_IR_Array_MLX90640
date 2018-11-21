@@ -1,9 +1,10 @@
-Qwiic IR Array (MLX90640-110x75 FOV)
+Qwiic IR Array (MLX90640)
 ==================
 
 ![Qwiic IR Array](https://cdn.sparkfun.com/r/500-500/assets/parts/1/3/1/1/3/14843-SparkFun_IR_Array_Breakout_-_110_Degree_FOV__MLX90640__Qwiic_-01.jpg)
 
 [*Qwiic IR Array (SEN-14843)*](https://www.sparkfun.com/products/14843)
+[*Qwiic IR Array (SEN-14844)*](https://www.sparkfun.com/products/14843)
 
 The MLX90640 contains a 32x24 array of thermopile sensors creating, in essence, a low resolution thermal imaging camera.
 
@@ -21,7 +22,8 @@ Documentation
 
 Product Versions
 ----------------
-* [SEN-14843](https://www.sparkfun.com/products/14843)- SparkFun red version
+* [SEN-14843](https://www.sparkfun.com/products/14843)- SparkFun 55 degree FOV
+* [SEN-14844](https://www.sparkfun.com/products/14844)- SparkFun 110 degree FOV
 * [SPX-14768](https://www.sparkfun.com/products/14768)- SparkX version
 
 License Information
